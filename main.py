@@ -6,7 +6,7 @@ author: Yehor Baranov
 email: yhr.baranov@post.cz
 
 """
-from random import sample
+from random import sample, seed
 from textwrap import dedent
 
 separator = "-" * 48
@@ -25,12 +25,13 @@ print(salutation()) # test funkci salutation() / pozdrav
 
 # výběr tajného čísla
 def secret_number() -> str:
+    seed(0) # Nastavení pevného čísla pro test
     return ''.join(sample("123456789", 4))
 
-print(secret_number()) # test funkci secret_number() / tajemne číslo
+print(secret_number()) # test funkci secret_number() / tajemné číslo
 
 # Ověřuje vstup uživatele
-def chek_input(number_input: str) -> bool:
+def check_input(number_input: str) -> bool:
     if number_input.isdigit() and \
         len(set(number_input)) == 4 and \
         number_input[0] != "0":
@@ -41,4 +42,4 @@ def chek_input(number_input: str) -> bool:
             no duplicates, no leading zero, and only digits.
         ''')
 
-print(chek_input("21d3")) # test funkci chek_input() / validuj_vstup
+print(check_input("3425")) # test funkci chek_input() / validuj_vstup
