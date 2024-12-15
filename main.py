@@ -19,16 +19,17 @@ def salutation():
         I've generated a random 4 digit number for you.
         Let's play a bulls and cows game.
         {separator}
+        Enter a number:
+        {separator}
     """)
 
-# print(salutation()) # test funkci salutation() / pozdrav
+    # print(salutation()) # test funkci salutation() / pozdrav
 
 # výběr tajného čísla
 def secret_number() -> str:
     seed(0) # Nastavení pevného čísla pro test
     return ''.join(sample("123456789", 4))
 
-print(secret_number()) # test funkci secret_number() / tajemné číslo
 
 # Ověřuje vstup uživatele
 def check_input(number_input: str) -> bool:
@@ -37,14 +38,8 @@ def check_input(number_input: str) -> bool:
         number_input[0] != "0":
         return True
     else:
-        return dedent(f'''
-            {separator}
-            Your input is invalid. Please enter exactly 4 digits,
-            no duplicates, no leading zero, and only digits.
-            {separator}
-        ''')
+        return False
 
-# print(check_input("s856")) # test funkci check_input() / validuj_vstup
 
 # srovnání čísel / comparing numbers
 def comparing_numbers(number_s, number_g: str) -> bool:
@@ -72,12 +67,27 @@ def comparing_numbers(number_s, number_g: str) -> bool:
                 cows += 1
                 # Označení čísla jako použitého / Mark the number as used
                 guess_used.append(number_g[i])
-    return dedent(f"""
-        >>> {number_g}
-        {bulls} bulls, {cows} cows
-    """)
+    return f"{bulls} bulls, {cows} cows"
 
-# print(comparing_numbers(secret_number(), "5374"))
 
 # průběh hry
 def major_game():
+    print(salutation())
+    secret_num = secret_number()
+    while True:
+        number_input = input(f">>> ")
+        if check_input(number_input):
+            result = comparing_numbers(secret_num, number_input)
+            print(result)
+            if "Correct" in result:
+                break
+        else:
+            print(dedent(f'''
+                    {separator}
+                    Your input is invalid. Please enter exactly 4 digits,
+                    no duplicates, no leading zero, and only digits.
+                    {separator}
+            '''))
+
+
+major_game()
