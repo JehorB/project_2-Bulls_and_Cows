@@ -15,6 +15,9 @@ Hra "Bulls and Cows" je klasická logická hra, ve které se hráč snaží uhod
 ## Instalace
 
 1. Stáhněte nebo naklonujte tento repozitář.
+    ```bash
+    git clone https://github.com/JehorB/project_2-Bulls_and_Cows.git
+    ```
 2. Ujistěte se, že máte nainstalovanou správnou verzi Pythonu (doporučeno Python 3.13 a vyšší).
 3. Pokud máte externí závislosti (například v souboru `requirements.txt`), nainstalujte je pomocí příkazu:
 
