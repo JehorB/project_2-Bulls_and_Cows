@@ -15,7 +15,7 @@ Hra "Bulls and Cows" je klasická logická hra, ve které se hráč snaží uhod
 ## Instalace
 
 1. Stáhněte nebo naklonujte tento repozitář.
-2. Ujistěte se, že máte nainstalovanou správnou verzi Pythonu (doporučeno Python 3.6 a vyšší).
+2. Ujistěte se, že máte nainstalovanou správnou verzi Pythonu (doporučeno Python 3.13 a vyšší).
 3. Pokud máte externí závislosti (například v souboru `requirements.txt`), nainstalujte je pomocí příkazu:
 
     ```bash
@@ -38,27 +38,7 @@ Hra "Bulls and Cows" je klasická logická hra, ve které se hráč snaží uhod
 
 ## Příklad chodu programu
 
-Hi there!
-----------------------------------------------------
-I've generated a random 4 digit number for you.
-Let's play a bulls and cows game.
-----------------------------------------------------
-Enter a number:
-----------------------------------------------------
->>> 7896
-0 bulls, 1 cows
-----------------------------------------------------
->>> 9165
-3 bulls, 3 cows
-----------------------------------------------------
->>> 4165
-Correct, you've guessed the right number on 11 attempts
-in 03min : 00sec : 671ms
-That's amazing!
-----------------------------------------------------
-
-Would you like to play again?
-Press 'Enter' to play again or type 'exit' to quit.
+![](screenshots/image_1.jpeg)
 
 ## Poznámky
 
@@ -70,3 +50,5 @@ Press 'Enter' to play again or type 'exit' to quit.
 
 Tento projekt je licencován pod licencí MIT. Další informace naleznete v souboru LICENSE.
 
+### Autor
+* [Yehor Baranov](https://github.com/JehorB)
