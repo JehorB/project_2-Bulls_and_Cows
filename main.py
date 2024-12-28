@@ -227,4 +227,6 @@ def clear_screen():
     else:
         os.system('clear')
 
-start_game()
+
+if __name__ == '__main__':
+    start_game()
