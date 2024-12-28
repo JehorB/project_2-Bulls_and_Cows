@@ -43,7 +43,12 @@ def secret_number() -> str:
         str: Náhodné čtyřciferné číslo jako řetězec.
     """
     # seed(0) # Nastavení pevného čísla pro test
-    return ''.join(sample("123456789", 4))
+    # Generování náhodných čísel / Random number generation
+    number = ''.join(sample("0123456789", 4))
+    # Pokud je první číslo 0, generujte znovu / If the first number is 0, generate again
+    while number[0] == 0:
+        number = ''.join(sample("123456789", 4))
+    return number
 
 
 # Ověřuje vstup uživatele / Verifies user input
