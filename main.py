@@ -104,8 +104,7 @@ def comparing_numbers(number_s, number_g: str, attempt: int, start_time: float) 
     # Počítáme cows / Count the cows
     for i in range(4):
         if number_g[i] != number_s[i]:
-            if number_g[i] in number_s and \
-            number_g[i] not in guess_used:
+            if number_g[i] in number_s and number_g[i] not in guess_used:
                 cows += 1
                 # Označení čísla jako použitého / Mark the number as used
                 guess_used.append(number_g[i])
