@@ -42,7 +42,7 @@ def secret_number() -> str:
     Návratová hodnota:
         str: Náhodné čtyřciferné číslo jako řetězec.
     """
-    # seed(0) # Nastavení pevného čísla pro test
+    seed(0) # Nastavení pevného čísla pro test
     # Generování náhodných čísel / Random number generation
     number = ''.join(sample("0123456789", 4))
     # Pokud je první číslo 0, generujte znovu / If the first number is 0, generate again
@@ -147,7 +147,7 @@ def format_game_time(seconds: float) -> str:
     """
     minutes = int(seconds // 60)
     secs = int(seconds % 60)
-    millis = int ((seconds * 1000 % 1000))
+    millis = int ((seconds % 1) * 1000)
     return f"{minutes:02}min : {secs:02}sec : {millis:03}ms"
 
 
